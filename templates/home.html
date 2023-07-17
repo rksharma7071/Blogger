@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <h3 class="py-3">Home Page</h3>
+    
+    {% for post in posts %}  
+    <div class="col-md-6">
+        <div class="p-3  mb-4 bg-light rounded-3 border">
+            <div class="row">
+                <div class="col text-dark">
+                    <a href="{{post.slug}}">
+                        <div class="container-fluid py-1">
+                            <h1 class="display-6 fw-bold">{{post.title}}</h1>
+                            <p class="col-md fs-5">{{post.desc|truncatewords:50}}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+{% endblock content %}
+    
